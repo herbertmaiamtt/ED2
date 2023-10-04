@@ -1,22 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void bubbleSort(int *v, int n){
-    int aux, fim, troca;
-    fim = n;
+void insertionSort(int *v, int n){
+    int aux;
 
-    do{
-        troca = -1;
-        for(int i =0; i < fim - 1; i++){
-            if(v[i] > v[i+1]){
-                aux = v[i];
-                v[i] = v[i+1];
-                v[i+1] = aux;
-                troca = i;
-            }
+    for(int i = 1; i < n; i++){
+        aux = v[i];
+        j = i;
+        while(j > 0 && v[j-1] > aux){
+            v[j] = v[j-1]; 
+            j--;
         }
-        fim--;
-    }while(troca != -1);
+        v[j] = aux;
+    }
 }
 
 int main(){
@@ -31,7 +27,7 @@ int main(){
         printf("%d ", v[i]);
     }
 
-    bubbleSort(v, 10);
+    insertionSort(v, 10);
 
     printf("\nVetor ordenado:\n");
     for(int i = 0; i < 10; i++){
