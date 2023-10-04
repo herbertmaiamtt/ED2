@@ -27,8 +27,7 @@ int main(){
 
     printf("Posicao do inteiro digitado: %d", buscaOrdenada(v, n, x));
 
-    for(int i = 0; i < n; i++)
-        free(v[i]);
+        free(v);
 
     return 0;
 }
