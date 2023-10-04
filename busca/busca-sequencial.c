@@ -33,5 +33,7 @@ int main(){
 
     printf("Posicao numero %d", buscaSequencial(v, n, x));
 
+    free(v);
+
     return 0;
 }
