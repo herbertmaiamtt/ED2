@@ -31,9 +31,10 @@ int main(){
     printf("\nBusque a posicao de um numero no vetor (digite o numero): ");
     scanf("%d", &x);
 
-    printf("Posicao numero %d", buscaSequencial(v, n, x));
+    printf("Posicao do inteiro digitado: %d", buscaSequencial(v, n, x));
 
-    free(v);
+    for(int i = 0; i < n; i++)
+        free(v[i]);
 
     return 0;
 }
